@@ -44,10 +44,16 @@ class MyHomePage extends StatelessWidget {
                 .map((e) => Card(
                       child: Row(children: <Widget>[
                         Container(
-                          child: Text(e.value.toString()),
+                          child: Text(
+                            e.value.toString(),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.purple),
+                          ),
                           decoration: BoxDecoration(
                               border:
-                                  Border.all(color: Colors.black, width: 2)),
+                                  Border.all(color: Colors.purple, width: 2)),
                           margin: EdgeInsets.symmetric(
                               horizontal: 15, vertical: 10),
                           padding: EdgeInsets.all(10),
