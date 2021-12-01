@@ -45,7 +45,7 @@ class MyHomePage extends StatelessWidget {
                       child: Row(children: <Widget>[
                         Container(
                           child: Text(
-                            e.value.toString(),
+                            'R\$ ${e.value.toStringAsFixed(2)}',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
