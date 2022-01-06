@@ -114,12 +114,12 @@ class _MyHomePageState extends State<MyHomePage> {
             if (_showChart || !isLandscape)
               Container(
                 child: Chart(_recentTransactions),
-                height: availableHeight * (isLandscape ? 0.7 : 0.3),
+                height: availableHeight * (isLandscape ? 0.75 : 0.3),
               ),
             if (!_showChart || !isLandscape)
               Container(
                 child: TransactionList(_transactions, _removeTransaction),
-                height: availableHeight * 0.75,
+                height: availableHeight * (isLandscape ? 1 : 0.7),
               )
           ],
         ),
