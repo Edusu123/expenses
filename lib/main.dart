@@ -87,6 +87,14 @@ class _MyHomePageState extends State<MyHomePage> {
           // ,style:TextStyle(fontSize: 20 * MediaQuery.of(context).textScaleFactor)
           ),
       actions: [
+        if (isLandscape)
+          IconButton(
+              onPressed: () {
+                setState(() {
+                  _showChart = !_showChart;
+                });
+              },
+              icon: Icon(_showChart ? Icons.list : Icons.show_chart)),
         IconButton(
             onPressed: () => _openTransactionFormModal(context),
             icon: Icon(Icons.add))
@@ -103,20 +111,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            if (isLandscape)
-              Row(
-                children: [
-                  Text('Exibir Gráfico'),
-                  Switch(
-                      value: _showChart,
-                      onChanged: (value) {
-                        setState(() {
-                          _showChart = value;
-                        });
-                      }),
-                ],
-                mainAxisAlignment: MainAxisAlignment.center,
-              ),
             if (_showChart || !isLandscape)
               Container(
                 child: Chart(_recentTransactions),
